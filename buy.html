@@ -1,0 +1,306 @@
+﻿<html>
+ <head>
+    <script src="./MobileScripts/jquery.min.js"></script>
+    <script src="./MobileScripts/jquery.mobile-1.4.5.js"></script>
+    <script src="./MobileScripts/jquery.mobile-1.4.5.min.js"></script>
+	<script src='./Swipe/js/hammer.min.js?v=1.0'></script>
+	<script src='./Swipe/js/slider.js?v=1.8'></script>
+	<link rel="stylesheet" type="text/css" href="./Swipe/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="./Swipe/css/style.css?v=1.7"/>
+	<link rel="stylesheet" type="text/css" href="./Swipe/icons/entypo.css"/>
+    <link rel="stylesheet" type="text/css" href="./MobileContent/base/jquery.mobile-1.4.5.min.css" />
+	<style type="text/css">
+	.titlediv
+	{
+		font-size:40px;
+		padding:0px 10px 10px 20px;
+		color:#941729;
+		background-color:#FEFEFE;
+	}
+	
+	.moneydiv
+	{
+		font-size:40px;
+		padding:0px 0px 30px 20px;
+		color:#ff0000;
+		vertical-align: middle;
+	}
+	.content {background-color: #FEFEFE; }/* margin 百分比相对父元素宽度计算 */
+	
+	.detailDiv
+	{
+		font-size:50px;
+		background-color: #F8EFF0; 
+		padding:20px 0px 20px 0px;
+		color:#941729;
+		text-align:center;
+	}
+	
+	.sizediv
+	{
+		font-size:40px;
+		padding:30px 20px 30px 20px;
+		color:#ffffff;
+		text-align:center;
+	}
+	
+	.sizeBuydiv
+	{
+		font-size:60px;
+		padding:30px 20px 30px 20px;
+		color:#ffffff;
+		text-align:center;
+	}
+	
+	.subTitleSizediv
+	{
+		font-size:35px;
+		padding:30px 20px 30px 20px;
+		color:#941729;
+	}
+	.smallSizeDiv
+	{
+		font-size:20px;
+		margin-top:10px;
+		color:#941729;
+	}
+	.picSizeDiv
+	{
+		text-align:center;
+	}
+	.sizeImg
+	{
+		margin-top:20px;
+		color:#941729;
+	}
+	.itemDiv
+	{
+		margin:0px 0px 0px 10px;
+	}
+	.subItemDiv
+	{
+		float:left;
+		font-size:30px;
+		width:120px;
+		height:60px;
+		margin:10px 10px 10px 10px;
+		border:1px solid #941729;
+		display:inline-block;
+		color:#941729;
+		text-align:center;
+		line-height:50px;
+		border-radius:5px;
+	}
+	.subEndItemDiv
+	{
+		font-size:30px;
+		width:120px;
+		height:60px;
+		margin:10px 10px 10px 10px;
+		border:1px solid #941729;
+		display:inline-block;
+		color:#941729;
+		text-align:center;
+		line-height:50px;
+		border-radius:5px;
+	}
+	.numDiv
+	{
+		margin:10px 10px 10px 10px;
+		font-size:30px;
+		text-align:center;
+		line-height:8px;
+		display: table-cell;
+		width:80px;
+		height:60px;
+		border:1px solid #941729;
+		vertical-align:middle;
+	}
+	
+	.buyDiv
+	{
+		 bottom:-1000px;
+	}
+	
+	.displayBuyDiv  
+	{
+		animation:displayBuyAnimal 1s;
+		-webkit-animation:displayBuyAnimal 1s; /* Safari 和 Chrome */	
+		animation-fill-mode: forwards;
+	}  
+
+	@keyframes displayBuyAnimal  
+	{  
+		0%   {left:0px; bottom:-1000px;}  
+		100%  {left:0px; bottom:0px;}  
+	}
+	
+	.hideBuyDiv
+	{
+		animation:hideBuyAnimal 1s;
+		-webkit-animation:hideBuyAnimal 1s; /* Safari 和 Chrome */	
+		animation-fill-mode: forwards;
+	}
+	@keyframes hideBuyAnimal  
+	{  
+		0%   {left:0px; bottom:0px;}  
+		100%  {left:0px; bottom:-1000px;}  
+	}
+	</style>
+	<script>
+	
+	function displayBuyDivfun()
+	{
+		$("#buyDiv").removeClass("hideBuyDiv");
+		$("#buyDiv").removeClass("buyDiv");
+		$("#buyDiv").addClass("displayBuyDiv");
+	}
+	function hideBuyDivfun()
+	{
+		$("#buyDiv").addClass("hideBuyDiv");
+		$("#buyDiv").removeClass("displayBuyDiv");
+		$("#buyDiv").removeClass("buyDiv");
+	}
+	function goHome()
+	{
+		window.location.href= "./category.html";
+	}
+	function goFamilyMenu()
+	{
+		window.location.href= "FamilyMenu.html";
+	}	
+	function goBuyCar()
+	{
+		window.location.href= "BuyCar/BuyCar.html";
+	}
+	</script>
+ </head>
+ <body>
+	<div class='content'>
+		<div class='o-sliderContainer' id="pbSliderWrap0">
+		  <div class='o-slider' id='pbSlider0'>
+			<div class="o-slider--item" data-image="./newImage/details.jpg">
+			</div>
+			<div class="o-slider--item" data-image="./newImage/Buy2.jpg">
+			</div>
+			<div class="o-slider--item" data-image="./newImage/Buy3.jpg">
+			</div>
+		  </div>
+		 </div>
+		<div class="titlediv">小学新生校服购买（夏运服2套、秋运服2套、冬运服2套、夏制服，冬制服各1套共8套)按身高购买</div>
+		<div class="moneydiv">￥ 25.00</div>
+		
+		<div class="detailDiv">商品详情</div>
+        <img style="width:100%;" src="./newImage/detailMemo1.jpg" />
+        <img style="width:100%;" src="./newImage/detailMemo2.jpg" />
+        <img style="width:100%;margin-bottom:110px" src="./newImage/detailMemo3.jpg" />
+	   <div class="ui-grid-d" style="position:fixed;z-index:100;bottom:0px;right:0px;background-color:#F8EFF0;width:100%;display: inline-block;">
+		<div class="ui-block-a picSizeDiv" style="width:12%;" onclick=goHome()>
+		 <img class="sizeImg" src="./newImage/MainPage.png"  />
+		 <div class="smallSizeDiv">商城主页</div>
+		</div>
+		<div class="ui-block-b picSizeDiv" style="width:12%;" onclick=goFamilyMenu()>
+		 <img class="sizeImg" src="./newImage/MyPage.png"  />
+		 <div class="smallSizeDiv">家长主页</div>
+		</div>
+		<div class="ui-block-c picSizeDiv" style="width:12%;" onclick=goBuyCar()>
+		 <img class="sizeImg" src="./newImage/BuyCart.png"  />
+		 <div class="smallSizeDiv">购物车</div>
+		</div>
+		<div class="ui-block-d" style="width:32%;background-color:#941729;" onclick=displayBuyDivfun()>
+		 <div class="sizediv">加入购物车</div>
+		</div>
+		<div class="ui-block-e" style="width:32%;background-color:#ff0000;" onclick=displayBuyDivfun()>
+		 <div class="sizediv">立即购买</div>
+		</div>
+	   </div>
+	   <div class="buyDiv" id="buyDiv" style="position:fixed;right:0px;z-index:9999999;background-color:#F8EFF0;width:100%;display: inline-block; border-top:1px solid #941729;">
+			<div class="ui-grid-b" >
+				<div class="ui-block-a"  style="width:13%;">
+					<img style="width:110px;margin:10px 0px 0px 10px;" src="./newImage/details.jpg"  />
+				</div>
+				<div class="ui-block-b"  style="width:80%;">
+					<div style="font-size:30px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:#941729;margin:20px 0px 0px 10px;">小学新生校服购买（夏运服2套、秋运服2套、冬运服2套、夏制服，冬制服各1套共8套)按身高购买</div>
+					<div style="font-size:30px;margin:10px 0px 0px 10px;;color:#ff0000;">购买价：￥ 25.00</div>
+				</div>
+				<div class="ui-block-c" style="text-align:right; width:7%;">
+					<canvas id="canvas" onclick=hideBuyDivfun() class="height:60px;width:60px;"></canvas> 
+				</div>
+			</div>
+			<hr/>
+			<div>
+				<div class="subTitleSizediv">种类：</div>
+				<div class="itemDiv">
+					<div class="subItemDiv">男</div>
+					<div class="subEndItemDiv">女</div>
+				</div>
+			</div>
+			<div>
+				<div class="subTitleSizediv">尺码：</div>
+				<div class="itemDiv">
+					<div class="subItemDiv">115</div>
+					<div class="subItemDiv">120</div>
+					<div class="subItemDiv">125</div>
+					<div class="subItemDiv">130</div>
+					<div class="subItemDiv">135</div>
+					<div class="subItemDiv">140</div>
+					<div class="subItemDiv">145</div>
+					<div class="subItemDiv">150</div>
+					<div class="subItemDiv">155</div>
+					<div class="subItemDiv">160</div>
+					<div class="subEndItemDiv">165</div>
+				</div>
+			</div>
+			<hr/>
+			<div style="display: inline-block;width:100%">
+				<div class="subTitleSizediv" style="float:left;display: inline-block;width:60%">购买数量：</div>
+				<div style="margin-top:20px;">
+					<div class="numDiv">-</div>
+					<div class="numDiv" style="border-left-width:0px;border-right-width:0px;">1</div>
+					<div class="numDiv">+</div>
+				</div>
+			</div>
+			<div>
+				<div class="sizeBuydiv" style="background-color:#941729;margin-top:30px;">
+					立即购买
+				</div>
+			</div>
+	   </div>
+	</div>
+ </body>
+ 
+<script>
+		$('#pbSlider0').pbTouchSlider({
+		slider_Wrap: '#pbSliderWrap0',
+		slider_Threshold: 10,
+		slider_Speed:600,
+		slider_Ease:'ease-out',
+		slider_Drag : true,
+		slider_Arrows: {
+		  enabled : false
+		},
+		slider_Dots: {
+		  class :'.o-slider-pagination',
+		  enabled : true
+		}
+		});
+        document.addEventListener('WeixinJSBridgeReady',
+            function onBridgeReady() {
+                $(".ui-loader").hide();
+            }, false);
+
+	var oCanvas = document.getElementById("canvas");
+	var context = oCanvas.getContext("2d");
+	
+	//画圆第一个
+	context.beginPath(); //开始圆
+	context.arc(30, 30, 20, 0, 2 * Math.PI, true);//50半径,Math.PI圆的π,true顺时针 .arc(120, 60, 5, 0, 2 * Math.PI, true); .ellipse(120, 60, 6, 6, 0, 0, 2*Math.PI, true)
+	context.closePath(); // 关闭圆，然后回到起点
+	context.moveTo(20, 20);
+	context.lineTo(40,40);
+	context.moveTo(20, 40);
+	context.lineTo(40,20);
+	context.strokeStyle = "#555555"; 
+	context.stroke(); //填充这个圆
+</script>
+</html>

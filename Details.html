@@ -1,0 +1,191 @@
+﻿<html>
+ <head>
+    <link rel="stylesheet" type="text/css" href="./MobileContent/base/jquery.mobile-1.4.5.min.css" />
+ <style type="text/css">
+.cap-cube-wrap{width:100%;overflow:hidden}
+.cap-cube{width:100%;position:relative}
+.cap-cube-wrap{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.cap-cube__item{position:absolute;background-repeat:no-repeat;background-size:cover;background-position:50%;overflow:hidden}
+.cap-cube__table-image--invisible{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0}
+.content-body{position:relative;z-index:10}
+.content {background-color: #FEFEFE; }/* margin 百分比相对父元素宽度计算 */
+
+.placeholder {
+    display: inline-block;
+    line-height: 22px;
+    margin: 2% 0% 0% 2%;
+    width: 96%;
+}
+.placeholder:before {
+  content: '';
+  display: block;
+  margin-top: 0%; /* margin 百分比相对父元素宽度计算 */
+}
+.placeholder:after {
+  content: '';
+  display: block;
+  margin-top: 0%; /* margin 百分比相对父元素宽度计算 */
+}
+
+.promptDiscriptDiv
+{
+	margin-left:3%;
+	width:94%;
+	border-radius: 5px 5px 5px 5px;
+	border-width: 1px 1px 1px 1px;
+}
+
+.promptDiscriptinnerDiv
+{
+    margin:10px 10px 10px 10px;
+	font-size:13px;
+	line-height:22px;
+}
+.titleDiv
+{
+	font-size:50px;
+	background-color: #F8EFF0; 
+    padding:20px 0px 20px 0px;
+	margin-bottom:20px;
+	color:#941729;
+	text-align:center;
+}
+.sizediv
+{
+	font-size:40px;
+    padding:5px 0px 0px 20px;
+	color:#941729;
+}
+
+.moneyTotalDiv
+{
+    margin: 2% 0% 5% 0%;
+}
+
+.moneydiv
+{
+	font-size:40px;
+    padding:10px 0px 10px 20px;
+	color:#ff0000;
+	vertical-align: middle;
+}
+
+.moneyPicDiv
+{
+    display: inline-block;
+    line-height: 22px;
+    margin: 2% 10% 0% 2%;
+    width: 30%;
+	float:right;
+}
+
+.blockDiv
+{
+	background-color: #ffffff; 
+}
+
+</style>
+<script>
+	function goBuy()
+	{
+		window.location.href= "./buy.html";
+	}
+</script>
+ </head>
+ <body>
+ <div>
+ <div class="content">
+  <div class="cap-cube-wrap">
+   <div class="titleDiv">- 校服 -</div>
+   <div class="ui-grid-a">
+    <div class="ui-block-a" onclick=goBuy() >
+     <img class="placeholder" src="./newImage/details.jpg" />
+	 <div class="sizediv" >幼儿园夏季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+    <div class="ui-block-b" onclick=goBuy()>
+     <img class="placeholder" src="./newImage/details.jpg"  />
+	 <div class="sizediv" >幼儿园秋季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+   </div>  
+   <div class="ui-grid-a">
+    <div class="ui-block-a" onclick=goBuy()>
+     <img class="placeholder" src="./newImage/details.jpg" />
+	 <div class="sizediv" >幼儿园夏季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+    <div class="ui-block-b" onclick=goBuy()>
+     <img class="placeholder" src="./newImage/details.jpg"  />
+	 <div class="sizediv" >幼儿园秋季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+   </div>  
+   <div class="ui-grid-a">
+    <div class="ui-block-a" onclick=goBuy()>
+     <img class="placeholder" src="./newImage/details.jpg" />
+	 <div class="sizediv" >幼儿园夏季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+    <div class="ui-block-b" onclick=goBuy()>
+     <img class="placeholder" src="./newImage/details.jpg"  />
+	 <div class="sizediv" >幼儿园秋季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+   </div>  
+   <div class="ui-grid-a">
+    <div class="ui-block-a" onclick=goBuy()>
+     <img class="placeholder" src="./newImage/details.jpg" />
+	 <div class="sizediv" >幼儿园夏季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+    <div class="ui-block-b" onclick=goBuy()>
+     <img class="placeholder" src="./newImage/details.jpg"  />
+	 <div class="sizediv" >幼儿园秋季校服（男女）</div>
+	 <div class="ui-grid-a moneyTotalDiv">
+	 <div class="ui-block-a moneydiv">￥ 25.00</div>
+	 <div class="ui-block-b">
+		<img class="moneyPicDiv" src="./newImage/Buy.png"  />
+	 </div>
+	 </div>
+    </div>
+   </div>  
+  </div>  
+  </div>
+ </body>
+</html>

@@ -1,0 +1,130 @@
+﻿<html>
+ <head>
+    <script src="~/MobileScripts/jquery.min.js"></script>
+    <script src="~/MobileScripts/jquery.mobile-1.4.5.js"></script>
+    <script src="~/MobileScripts/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./MobileContent/base/jquery.mobile-1.4.5.min.css" />
+ <style type="text/css">
+.cap-cube-wrap{width:100%;overflow:hidden}
+.cap-cube{width:100%;position:relative}
+.cap-cube-wrap{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.cap-cube__item{position:absolute;background-repeat:no-repeat;background-size:cover;background-position:50%;overflow:hidden}
+.cap-cube__table-image--invisible{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0}
+.content-body{position:relative;z-index:10}
+.content {background-color: #FEFEFE; }/* margin 百分比相对父元素宽度计算 */
+
+.placeholder {
+    display: inline-block;
+    line-height: 22px;
+    margin: 20% 20% 5% 20%;
+    width: 40%;
+}
+.placeholder:before {
+  content: '';
+  display: block;
+  margin-top: 0%; /* margin 百分比相对父元素宽度计算 */
+}
+.placeholder:after {
+  content: '';
+  display: block;
+  margin-top: 0%; /* margin 百分比相对父元素宽度计算 */
+}
+
+.promptDiscriptDiv
+{
+	margin-left:3%;
+	width:94%;
+	border-radius: 5px 5px 5px 5px;
+	border-width: 1px 1px 1px 1px;
+}
+
+.promptDiscriptinnerDiv
+{
+    margin:10px 10px 10px 10px;
+	font-size:13px;
+	line-height:22px;
+}
+.titleDiv
+{
+	font-size:50px;
+	background-color: #F8EFF0; 
+    padding:20px 0px 20px 50px;
+    color:#941729;
+}
+
+.sizediv
+{
+	font-size:30px;
+    padding:0px 0px 50px 50px;
+	color:#941729;
+}
+
+</style>
+<script type="text/javascript">
+
+function selectProduct(curFee) {
+	//$.mobile.changePage(Details.html,{ transition: "slideup" });
+	window.location.href= "./Details.html";
+}
+		
+</script>
+ </head>
+ <body>
+ <div>
+ <div class="content">
+ <div  style="padding:50px 200px 150px 200px;">
+        <img style="width:100%;" src="./newImage/logo.png" /><!--输入广东移动号码-->
+</div>
+  <div class="cap-cube-wrap">
+    <div class="titleDiv"><div class="titleDiv-font">推荐</div></div>
+   <div class="ui-grid-b">
+    <div class="ui-block-a" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/middleClothes_small.png" />
+	 <div class="sizediv" style="padding-left:75px">新生校服</div>
+    </div>
+   </div>
+  <div class="titleDiv">校服</div>
+   <div class="ui-grid-b">
+    <div class="ui-block-a" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/middleClothes_small.png"  />
+	 <div class="sizediv" style="padding-left:75px">新生校服</div>
+    </div>
+    <div class="ui-block-b" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/middleClothes_small.png" />
+	 <div class="sizediv">幼儿园校服</div>
+    </div>
+    <div class="ui-block-c" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/middleClothes_small.png"  />
+	 <div class="sizediv" style="padding-left:75px">小学校服</div>
+    </div>
+   </div>
+     <div class="titleDiv">CCA课程</div>
+   <div class="ui-grid-b">
+    <div class="ui-block-a" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/ACCClass_small.png" />
+	 <div class="sizediv" style="padding-left:75px">幼儿园课程</div>
+    </div>
+    <div class="ui-block-b" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/ACCClass_small.png"  />
+	 <div class="sizediv" style="padding-left:75px">小学课程</div>
+    </div>
+   </div>
+   
+    <div class="titleDiv">活动纪念品</div>
+   <div class="ui-grid-b">
+    <div class="ui-block-a" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/ACCClass_small.png" />
+	 <div class="sizediv" style="padding-left:95px">奖品一</div>
+    </div>
+    <div class="ui-block-b" onclick=selectProduct()>
+     <img class="placeholder" src="./newImage/middleClothes_small.png"  />
+	 <div class="sizediv" style="padding-left:95px">奖品二</div>
+    </div>
+   </div>
+  </div>
+  
+  </div>
+  
+  </div>
+ </body>
+</html>

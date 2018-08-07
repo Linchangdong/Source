@@ -1,0 +1,94 @@
+/*重置默认样式t  学生信息*/
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    font-size: 14px;
+    min-width: 320px;
+}
+ol,ul{
+    list-style: none;
+}
+
+
+textarea,input{
+    outline:none;
+    border:none;
+    -webkit-appearance: none;
+}
+
+
+/*顶部*/
+.jd_topBar{
+    height: 45px;
+    background:url("../newImage/header-bg.png");
+    -webkit-background-size: 1px 44px;
+    background-size: 1px 44px;
+    border-bottom: 1px solid #CCCCCC;
+    width: 100%;
+}
+
+
+.jd_topBar h3{
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+}
+.a_add{
+    float:right;
+    margin-right:20px;
+}
+
+
+.ul_list { margin: 5px 6px 10px 6px; -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.4); -webkit-border-radius: 5px; z-index: 1; }
+.ul_list > li{background: #FEFEFE;height: 70px;}
+
+.ul_list > li .student_MAIN{ background: #F8EFF0 url(n.png) no-repeat right center; border-top: #fff 1px solid; border-bottom: #abb1af 1px solid; 
+    padding: 20px 27px 20px 10px; 
+    display: block; overflow: hidden; }
+
+.ul_list > li:last-child { -webkit-border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; }
+
+.student_MAIN{  
+    height:69px;
+}
+.student_left{
+    float:left;
+    margin:5px 0 0 20px;
+}
+.student_center{
+    float:left;
+    margin:0 0 0 20px;
+    display:inline;
+}
+.student_center .student_foot p{
+    font-size:10px;
+}
+.student_center .student_top{
+    
+}
+.student_center .student_top .div_name{
+    float:left;
+}
+.student_center .student_top .div_sex{
+    margin-left:60px;
+    /* font-size:10px; */
+    color:gray;
+}
+
+.student_right{
+    float:right;
+    margin-top: 5px;
+}
+.student_right a{
+    font-size: 14px;
+    color:gray;
+}

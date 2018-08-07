@@ -1,0 +1,50 @@
+body{
+	background: #FEFEFE;
+}
+
+/*字体颜色：朱红*/
+label,p,select,input{
+	color: #941729;
+}
+
+a{
+    text-decoration: none;
+    color: #00a5e0;
+    font-size: 15px;
+}
+a:hover{
+    color: #333333;
+}
+
+.title{
+	font-size:40px;
+	padding:0px 10px 10px 20px;
+	color:#941729;
+	background-color: #F8EFF0;
+}
+.content {
+	background-color: #FEFEFE; 
+}
+.background_color{
+
+}
+.font_color{ 
+	/*朱红 */
+	color:#941729;
+}
+.Money_color{
+	color:#ff0000;
+}
+.detail{
+	font-size:50px;
+	background-color: #F8EFF0; 
+	padding:20px 0px 20px 0px;
+	color:#941729;
+	text-align:center;
+}
+.buttonEx{
+
+}
+.linklabel_style{
+
+}
