@@ -16,6 +16,12 @@ a:hover{
     color: #333333;
 }
 
+.f_right{
+	float: right;;
+}
+.f_left{
+	float: left;
+}
 .title{
 	font-size:40px;
 	padding:0px 10px 10px 20px;

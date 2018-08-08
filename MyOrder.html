@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>我的订单</title>
+		<link rel="stylesheet" href="css/MyOrder.css"> 
+		<link rel="stylesheet" href="css/common.css"> 
+	</head>
+	<body>
+		<!-- <header>
+			<div class="user">
+				<i class="iconfont">&#xe623;</i>
+			</div>
+			
+			<div class="userinfo">
+				<p>王大锤</p>
+				<p>18888888888</p>
+			</div>
+		</header> -->
+		
+		<!-- <section>
+			<a href="javascript:;"><i class="iconfont" style="background: #d6c46a;">&#xe717;</i>全部</a>
+			<a href="javascript:;"><i class="iconfont">&#xe60b;</i>待支付</a>
+			<a href="javascript:;"><i class="iconfont" style="background: #e25b5b;">&#xe617;</i>待发货</a>
+			<a href="javascript:;"><i class="iconfont" style="background: #62d07a;">&#xe671;</i>待收货</a>
+		</section>-->
+		
+		<aside>
+			<ul>	
+			<li class="order-header">
+			<a href="#" style="color: black;font-size: 15px;"><span>订单一</span><span class="span_right">></span></a></li>
+			</li>			
+			<li>
+				<div class="shop-info">
+					<div class="shop-info-img"><a href="#"><img src="newImage/小学生秋款.jpg" /></a></div>
+					<div class="shop-info-text">
+						<h4>深圳校服小学生秋款（男）</h4>
+						<div class="shop-brief">
+						<span>款式：长裤</span>
+						<span>尺寸：140</span>
+						</div>
+						<div class="shop-price">
+							<div class="shop-pices">&yen;<strong class="price">42.00</strong></div>							
+						</div>
+					</div>
+				</div>
+			</li>	
+			<li>
+				<div class="shop-info">
+					<div class="shop-info-img"><a href="#"><img src="newImage/中学生夏款.jpg" /></a></div>
+					<div class="shop-info-text">
+						<h4>深圳校服中学生夏款(男) </h4>
+						<div class="shop-brief">
+						<span>款式：上衣</span>
+						<span>尺寸：175</span>
+						</div>
+						<div class="shop-price">
+							<div class="shop-pices">&yen;<strong class="price">65.00</strong></div>
+							
+						</div>
+					</div>
+				</div>
+			</li>										
+			<li>
+			<div class="shop-footer">			
+				<div class="shopPrice"><span style="color: black;">共<span style="color: black;">2</span>件商品</span>&nbsp&nbsp 合计：&yen;<span class="shop-total-amount ShopTotal">107.00</span></div>
+			</div>
+			</li>	
+		</ul>
+
+		<ul>
+			<li>
+			<li class="order-header">
+			<a href="#" style="color: black;font-size: 15px;"><span>订单二</span><span class="span_right">></span></a></li>
+			</li>	
+			<li>
+				<div class="shop-info">
+					<div class="shop-info-img"><a href="#"><img src="newImage/小学生秋款.jpg" /></a></div>
+					<div class="shop-info-text">
+						<h4>深圳校服小学生秋款（男）</h4>
+						<div class="shop-brief">
+						<span>款式：长裤</span>
+						<span>尺寸：140</span>
+						</div>
+						<div class="shop-price">
+							<div class="shop-pices">&yen;<strong class="price">42.00</strong></div>
+							
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+			<div class="shop-footer">			
+				<div class="shopPrice"><span style="color: black;">共<span style="color: black;">1</span>件商品</span>&nbsp&nbsp 合计：&yen;<span class="shop-total-amount ShopTotal">42.00</span></div>
+			</div>
+			</li>															
+		</ul>
+		</aside>
+		<div style="height: 1rem;"></div>
+		<script src="js/jquery.js"></script>
+		<script>
+			$('footer a').click(function(){
+				$(this).addClass('on').siblings().removeClass('on');
+			});
+			$('a').click(function(){
+				alert('暂时开发中,敬请期待!');
+			})
+		</script>
+	</body>
+</html>

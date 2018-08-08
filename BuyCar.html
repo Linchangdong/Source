@@ -8,8 +8,42 @@
 
 <script type="text/javascript" src="MobileScripts/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="MobileScripts/shopping.js"></script>
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
 <link type="text/css" rel="stylesheet" href="css/BuyCar.css" />
+<link type="text/css" rel="stylesheet" href="css/common.css" />
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.edit').click(function(){
+		if($('.edit').text()=='编辑')
+		{
+			$('.delete_div').show();			
+			$('.edit').text('保存');
+		}
+		else
+		{
+			$('.delete_div').hide();			
+			$('.edit').text('编辑');
+		}			
+			
+		});
+
+		//点击删除
+		var that;
+		$('.delete_div').click(function(){
+			$('.jd_win').show();
+			that = $(this);
+		});	
+		$('.cancle').on('click',function(){
+			$('.jd_win').hide();
+			$('.delete_up').css('transform','none')
+		})
+		$('.submit').on('click',function(){
+			that.parent().parent().parent().remove();
+			$('.jd_win').hide();
+		})
+	});
+</script>
 </head>
 <body>
 
@@ -31,36 +65,37 @@
 	<div class="shop-group-item">
 		<div class="shop-name">
 			<input type="checkbox" class="check goods-check shopCheck">
-			<h4><a href="#">校服商城</a></h4>
-			<div class="coupons"><span>编辑</span></div>
+			<h4><span href="#">校服商城</span></h4>
+			<a href="#" class="edit">编辑</a>
 		</div>
 		<ul>
 			<li>
 				<div class="shop-info">
 					<input type="checkbox" class="check goods-check goodsCheck">
 					<div class="shop-info-img"><a href="#"><img src="newImage/小学生秋款.jpg" /></a></div>
-					<div class="shop-info-text">
+					<div class="shop-info-text f_left">
 						<h4>深圳校服小学生秋款（男）</h4>
 						<div class="shop-brief">
 						<span>款式：长裤</span>
 						<span>尺寸：140</span>
 						</div>
 						<div class="shop-price">
-							<div class="shop-pices">&yen;<strong class="price">42.00</strong></div>
+							<div class="shop-pices">&yen;<strong class="price">42.00</strong></div>							 
 							<div class="shop-arithmetic">
 								<a href="javascript:;" class="minus">-</a>
 								<span class="num" >1</span>
 								<a href="javascript:;" class="plus">+</a>
-							</div>
-						</div>
+							</div>							
+						</div>						
 					</div>
+					<a><div class="delete_div f_right" hidden><p class="delete_p">删除</p></div></a>
 				</div>
 			</li>	
 			<li>
 				<div class="shop-info">
 					<input type="checkbox" class="check goods-check goodsCheck">
 					<div class="shop-info-img"><a href="#"><img src="newImage/中学生夏款.jpg" /></a></div>
-					<div class="shop-info-text">
+					<div class="shop-info-text f_left">
 						<h4>深圳校服中学生夏款(男) </h4>
 						<div class="shop-brief">
 						<span>款式：上衣</span>
@@ -75,13 +110,14 @@
 							</div>
 						</div>
 					</div>
+					<a><div class="delete_div f_right" hidden><p class="delete_p">删除</p></div></a>
 				</div>
 			</li>
 			<li>
 				<div class="shop-info">
 					<input type="checkbox" class="check goods-check goodsCheck">
 					<div class="shop-info-img"><a href="#"><img src="newImage/小学生夏款裙装.jpg" /></a></div>
-					<div class="shop-info-text">
+					<div class="shop-info-text f_left">
 						<h4>深圳校服小学生夏款裙装（男生款）</h4>
 						<div class="shop-brief">
 						<span>款式：套装</span>
@@ -96,6 +132,7 @@
 							</div>
 						</div>
 					</div>
+					<a><div class="delete_div f_right" hidden><p class="delete_p">删除</p></div></a>
 				</div>
 			</li>			
 				
@@ -115,6 +152,16 @@
 	</div>
 </div>
 
+<div class="jd_win">
+    <div class="jd_win_box">
+        <div class="jd_win_tit">你确定删除该商品吗？</div>
+        <div class="jd_btn clearfix">
+            <a href="#" class="cancle f_left">取消</a>
+            <a href="#" class="submit f_right">确定</a>
+        </div>
+
+    </div>
+</div>
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 </div>
 </body>
