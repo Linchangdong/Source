@@ -47,12 +47,12 @@ input.check:checked{background:url(../newImage/icon/icon_radio4.png) no-repeat c
 .shop-info .shop-info-text .shop-price{height:24px;line-height:24px;position:relative;}
 .shop-info .shop-info-text .shop-price .shop-pices {color:#ff0000;}
 .shop-info .shop-info-text .shop-price .shop-pices .price {font-weight:normal;color:#ff0000;}
-.shop-info .shop-info-text .shop-arithmetic{position:absolute;right:0px;top:0;width:80px;box-sizing:border-box;white-space:nowrap;height:100%;border:1px solid #e0e0e0;}
-.shop-info .shop-info-text .shop-arithmetic a{display:inline-block;width:23px;height:22px;line-height:22px;text-align:center;background:#fff;font-size:16px;}
-.shop-info .shop-info-text .shop-arithmetic .minus{border-right:1px solid #e0e0e0;}
+.shop-info .shop-info-text .shop-arithmetic{position:absolute;right:0px;top:0;width:66px;box-sizing:border-box;white-space:nowrap;height:100%;border:1px solid #e0e0e0;}
+.shop-info .shop-info-text .shop-arithmetic a{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;background:#fff;font-size:16px;}
+.shop-info .shop-info-text .shop-arithmetic .minus{border-right:1px solid #e0e0e0;float: left;}
 .shop-info .shop-info-text .shop-arithmetic .failed{color:#d1d1d1;}
 .shop-info .shop-info-text .shop-arithmetic .plus{border-left:1px solid #e0e0e0;float: right;}
-.shop-info .shop-info-text .shop-arithmetic .num{width:29px;text-align:center;border:none;display: inline-block;height:100%;box-sizing:border-box;vertical-align:top;margin:0 -6px;}
+.shop-info .shop-info-text .shop-arithmetic .num{float:left; width:22px;text-align:center;border:none;display: inline-block;height:100%;box-sizing:border-box;vertical-align:top;margin:0 -6px;}
 .shopPrice{background:#fff;height:35px;line-height:35px;padding:0 15px;text-align:right;color:#ff0000;}
 .shopPrice span{color:#f00;}
 /*<!--安全提示-->*/
