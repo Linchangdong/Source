@@ -270,24 +270,24 @@
  </body>
  
 <script>
-		$('#pbSlider0').pbTouchSlider({
-		slider_Wrap: '#pbSliderWrap0',
-		slider_Threshold: 10,
-		slider_Speed:600,
-		slider_Ease:'ease-out',
-		slider_Drag : true,
-		slider_Arrows: {
-		  enabled : false
-		},
-		slider_Dots: {
-		  class :'.o-slider-pagination',
-		  enabled : true
-		}
-		});
-        document.addEventListener('WeixinJSBridgeReady',
-            function onBridgeReady() {
-                $(".ui-loader").hide();
-            }, false);
+	$('#pbSlider0').pbTouchSlider({
+	slider_Wrap: '#pbSliderWrap0',
+	slider_Threshold: 10,
+	slider_Speed:600,
+	slider_Ease:'ease-out',
+	slider_Drag : true,
+	slider_Arrows: {
+		enabled : false
+	},
+	slider_Dots: {
+		class :'.o-slider-pagination',
+		enabled : true
+	}
+	});
+    document.addEventListener('WeixinJSBridgeReady',
+        function onBridgeReady() {
+            $(".ui-loader").hide();
+        }, false);
 
 	var oCanvas = document.getElementById("canvas");
 	var context = oCanvas.getContext("2d");

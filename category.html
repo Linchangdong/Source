@@ -1,8 +1,8 @@
 ﻿<html>
  <head>
-    <script src="~/MobileScripts/jquery.min.js"></script>
-    <script src="~/MobileScripts/jquery.mobile-1.4.5.js"></script>
-    <script src="~/MobileScripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="./MobileScripts/jquery.min.js"></script>
+    <script src="./MobileScripts/jquery.mobile-1.4.5.js"></script>
+    <script src="./MobileScripts/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./MobileContent/base/jquery.mobile-1.4.5.min.css" />
  <style type="text/css">
 .cap-cube-wrap{width:100%;overflow:hidden}
@@ -67,6 +67,19 @@
 
 </style>
 <script type="text/javascript">
+$.ajax({
+
+    type: "POST",
+    url: "./CategoryServer.ashx",
+    data: { method:"GetStudent", page:"Category" },
+    dataType: "json",
+    success: function (curResult) {
+        alert(curResult);
+    },
+    error: function () { },
+    complete: function (XMLHttpRequest, textStatus) {
+    }
+});
 
 function selectProduct() {
 	//$.mobile.changePage(Details.html,{ transition: "slideup" });

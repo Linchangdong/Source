@@ -1,105 +1,113 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>个人信息</title>
-	<link href="css/reset.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="css/PersonInfo.css">
-	<link href="css/common.css" rel="stylesheet" type="text/css" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>个人信息</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/PersonInfo.css">
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
 
-	<script type="text/javascript" src="MobileScripts/jquery.min.js"></script>
-	<script type="text/javascript">
-		var w,h,className;
-		function getSrceenWH(){
-			w = $(window).width();
-			h = $(window).height();
-			$('#dialogBg').width(w).height(h);
-		}
+    <script type="text/javascript" src="MobileScripts/jquery.min.js"></script>
+    <script type="text/javascript">           
+        $(function () {
+            $.ajax({
+                type: "post",
+                //url: "PersonInfoServer.ashx?method=GetPersonInfo&openid=00001",
+                url: "PersonInfoServer.ashx",
+                data: { method: "GetPersonInfo", page: "PersonInfo" },
+                dataType: "json",
+                success: function (curResult) {                    
+                    $.each(curResult, function (i, item) {
+                        //只有一条数据，后续改进，不需要遍历
+                        $("#FNAME").text(item.FNAME);
+                        $("#FPHONENO").text(item.FPHONENO);
+                        $("#FBANKNO").text(item.FBANKNO);
+                        $("#FADDRESS").text(item.FADDRESS);
+                        $("#FBANKNAME").text(item.FBANKNAME);
+                    }
+                    );
+                },
+                error: function () { },
+                complete: function (XMLHttpRequest, textStatus) {
+                }
+            });
+        });
 
-		window.onresize = function(){  
-			getSrceenWH();
-		}  
-		$(window).resize();  
-
-		$(function(){
-			getSrceenWH();
-
-	//显示弹框
-	$('.box .bounceIn').click(function(){
-		//将值带到输入框
-		$('#editname').val($('#name').text());
-		$('#editsex').val($('#sex').text());
-		$('#editphone').val($('#phone').text());
-		className = $(this).attr('class');
-		$('#dialogBg').fadeIn(300);
-		$('#dialog').removeAttr('class').addClass('animated '+className+'').fadeIn();
-	});
-	
-	//关闭弹窗
-	$('.claseDialogBtn').click(function(){
-		$('#dialogBg').fadeOut(300,function(){
-			$('#dialog').addClass('bounceOutUp').fadeOut();
-		});
-	});
-
-	$('.submitBtn').click(function(){
-		//将修改后的值回传到列表 ,需要用ajax修改
-		alert($('#editname').val());
-		$('#name').text($('#editname').val());
-		$('#sex').text($('#editsex').val());
-		$('#phone').text($('#editphone').val());
-	})
-});
+            
 </script>
 </head>
 <body>
-	
-	<div class="aui-container">
-		<div class="aui-page">
-			<div class="aui-page-my">
-				<div class="aui-my-info">
-					<div class="aui-my-info-back"></div>
-					<a href="javascript:;" class="">
-						<img src="newImage/my-aw.jpg" class="aui-my-avatar">
-					</a>
-					<div class="aui-mt-location aui-l-red"></div>
-				</div>
-				<div>
-					<ul class="ul_list">
-						<li><a href="#"><span>姓名</span>
-							<span class="span_right" id="name">王晓东</span></a></li>
-							<li><a href="#"><span>性别</span>
-								<span class="span_right" id="sex">女</span"></a></li>
-									<li><a href="#"><span>手机号</span>
-										<span class="span_right"  id="phone">18888888888</span></a></li>
-									</ul>
-								</div>
-								<!--底部通栏-->
-								<footer class="footer_Bar">        
-									<div class="box">
-										<div class="demo">
-											<a href="#" class="bounceIn" >编辑</a> 	
-										</div> 
-										<div id="dialogBg"></div>
-										<div id="dialog" class="animated">
-											<img class="dialogIco" width="50" height="50" src="newImage/ico.png" alt="" />
-											<div class="dialogTop">
-												<a href="javascript:;" class="claseDialogBtn">关闭</a>
-											</div>
-											<form action="" method="post" id="editForm">
-												<ul class="editInfos">
-													<li><label><font color="#ff0000">* </font>姓名：<input type="text" id="editname" name="" required value="" class="ipt" /></label></li>
-													<li><label><font color="#ff0000">* </font>性别：<input type="text" id="editsex" name="" required value="" class="ipt" /></label></li>
-													<li><label><font color="#ff0000">* </font>手机：<input type="text" id="editphone" name="" required value="" class="ipt" /></label></li>
-													<li><input type="submit" value="确认提交" class="submitBtn" /></li>
-												</ul>
-											</form>
-										</div> 
-									</div>    
-								</footer>
-							</div>
-						</div>
-					</div>
-				</div>		
+
+    <div class="aui-container">
+        <div class="aui-page">
+            <div class="aui-page-my">
+                <div class="aui-my-info">
+                    <div class="aui-my-info-back"></div>
+                    <a href="javascript:;" class="">
+                        <img src="newImage/my-aw.jpg" class="aui-my-avatar">
+                    </a>
+                    <div class="aui-mt-location aui-l-red"></div>
+                </div>
+                <div>
+                    <ul class="ul_list">
+                        <li><a href="#"><span>姓名</span>
+                            <span class="span_right" id="FNAME"></span></a>
+                        </li>
+                        <li><a href="#"><span>手机号</span>
+                            <span class="span_right" id="FPHONENO"></span></a>
+                        </li>
+                        <li><a href="#"><span>银行账号</span>
+                            <span class="span_right" id="FBANKNO"</span></a>
+                        </li>
+                        <li><a href="#"><span>开户支行</span>
+                            <!-- <input class="span_right"  placeholder="详细至地市支行"  style="background-color:transparent;border:1; height: 30px;" type="text" name="" id="accountName" value="深圳市龙华新区龙华支行" /></a> -->
+                            <span class="span_right" id="FADDRESS"></span></a>
+                        </li>
+                        <li><a href="#"><span>户名</span>
+                            <span class="span_right" id="FBANKNAME"></span></a>
+                        </li>
+                        <!--<li>
+                            <p style="white-space: normal; line-height: 20px;">
+                                注释：此登记银行账号只为提高学校退款退费效率，家长能更便捷收学校退回学杂费及政府补贴等。为不产生纠纷，请家长填写学生直属家长账户信息。
+						
+                            </p>
+                        </li>-->
+                    </ul>
+                </div>
+                <!--底部通栏-->
+                <footer class="footer_Bar">
+                    <div class="box">
+                        <div class="demo">
+                            <a href="PersonInfo_add.html" class="edit">编辑</a>
+                        </div>
+                        <div id="dialogBg"></div>
+                        <div id="dialog" class="animated">
+                            <img class="dialogIco" width="50" height="50" src="newImage/ico.png" alt="" />
+                            <div class="dialogTop">
+                                <a href="javascript:;" class="claseDialogBtn">关闭</a>
+                            </div>
+                            <form action="" method="post" id="editForm">
+                                <ul class="editInfos">
+                                    <li>
+                                        <label><font color="#ff0000">* </font>姓名：<input type="text" id="editname" name="" required value="" class="ipt" /></label></li>
+                                    <li>
+                                        <label><font color="#ff0000">* </font>手机号：<input type="text" id="editphone" name="" required value="" class="ipt" /></label></li>
+                                    <li>
+                                        <label><font color="#ff0000">* </font>银行账号：<input type="text" id="editaccountNum" name="" required value="" class="ipt" /></label></li>
+                                    <li>
+                                        <label><font color="#ff0000">* </font>开户支行（详细至地市支行）：<input type="text" id="editaccountName" name="" required value="" class="ipt" /></label></li>
+                                    <li>
+                                        <label><font color="#ff0000">* </font>户名：<input type="text" id="editusername" name="" required value="" class="ipt" /></label></li>
+                                    <li>
+                                        <input type="submit" value="确认提交" class="submitBtn" /></li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>		
 </body>
 </html>
