@@ -149,30 +149,45 @@
 	</style>
 	<script>
 	
-	function displayBuyDivfun()
-	{
-		$("#buyDiv").removeClass("hideBuyDiv");
-		$("#buyDiv").removeClass("buyDiv");
-		$("#buyDiv").addClass("displayBuyDiv");
-	}
-	function hideBuyDivfun()
-	{
-		$("#buyDiv").addClass("hideBuyDiv");
-		$("#buyDiv").removeClass("displayBuyDiv");
-		$("#buyDiv").removeClass("buyDiv");
-	}
-	function goHome()
-	{
-		window.location.href= "./category.html";
-	}
-	function goFamilyMenu()
-	{
-		window.location.href= "FamilyMenu.html";
-	}	
-	function goBuyCar()
-	{
-		window.location.href= "BuyCar.html";
-	}
+	    function displayBuyDivfun()
+	    {
+		    $("#buyDiv").removeClass("hideBuyDiv");
+		    $("#buyDiv").removeClass("buyDiv");
+		    $("#buyDiv").addClass("displayBuyDiv");
+	    }
+	    function hideBuyDivfun()
+	    {
+		    $("#buyDiv").addClass("hideBuyDiv");
+		    $("#buyDiv").removeClass("displayBuyDiv");
+		    $("#buyDiv").removeClass("buyDiv");
+	    }
+	    function goHome()
+	    {
+		    window.location.href= "./category.html";
+	    }
+	    function goFamilyMenu()
+	    {
+		    window.location.href= "FamilyMenu.html";
+	    }	
+	    function goBuyCar()
+	    {
+		    window.location.href= "BuyCar.html";
+        }
+
+        function submitToCar()
+        {
+            $.ajax({
+                type: "post",
+                url: "BuyServer.ashx",
+                data: { method: "SubmitToCar", productId: 1, auxpropId: 1, name: '小学新生校服购买（夏运服2套、秋运服2套、冬运服2套、夏制服，冬制服各1套共8套)按身高购买', count:1 },
+                dataType: "json",
+                success: function (curResult) {
+                },
+                error: function () { },
+                complete: function (XMLHttpRequest, textStatus) {
+                }
+            });
+        }
 	</script>
  </head>
  <body>
@@ -261,7 +276,7 @@
 				</div>
 			</div>
 			<div>
-				<div class="sizeBuydiv" style="background-color:#941729;margin-top:30px;">
+				<div class="sizeBuydiv" onclick="submitToCar()" style="background-color:#941729;margin-top:30px;">
 					立即购买
 				</div>
 			</div>

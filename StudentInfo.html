@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>学生信息</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/StudentInfo.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="MobileScripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "post",
+                url: "StudentInfoServer.ashx",
+                data: { method: "GetStudentInfo", page: "StudentInfo" },
+                dataType: "json",
+                success: function (curResult) {
+                    $.each(curResult, function (i, item) {
+                        $('.ul_list').append(" <li> " +
+                                                " <div class='student_MAIN'> " +
+                                                "    <div class='student_left'> " +
+                                                "        <p>王</p> " +
+                                                "        <p id='FStudentId' hidden>" + item.FStudentId + "</p> " +
+                                                "    </div> " +
+                                                "    <div class='student_center'> " +
+                                                "        <div class='student_top'> " +
+                                                "            <div class='div_name'> " +
+                                                "                <p id='FNAME'>" + item.FNAME + "</p> " +
+                                                "            </div> " +
+                                                "            <div class='div_sex'> " +
+                                                "                <p style='display: inline'>班级：</p>  " +
+                                                "                <p id='FCLASS'  style='display: inline'>" + item.FCLASS + "</p> " +
+                                                "            </div> " +
+                                                "        </div> " +
+                                                "        <div class='student_foot'>  " +
+                                                "            <p style='display: inline'>出生日期：</p>  " +
+                                                "            <p id='FBIRTHDAY' style='display: inline'>" + item.FBIRTHDAY + "</p>  " +
+                                                "            <p style='display: inline'>&nbsp;性别：</p>  " +
+                                                "            <p id='FSEX' style='display: inline'>" + item.FSEX + "</p>  " +
+                                                "        </div>  " +
+                                                "        <div class='student_foot'>  " +
+                                                "            <p style='display: inline'>身高：</p>  " +
+                                                "            <p id='FHEIGHT' style='display: inline'>" + item.FHEIGHT + "</p>  " +
+                                                "            <p style='display: inline'>cm</p>  " +
+                                                "            <p style='display: inline'>体重：</p>  " +
+                                                "            <p id='FWEIGHT' style='display: inline'>" + item.FWEIGHT + "</p>  " +
+                                                "            <p style='display: inline'>kg</p>  " +
+                                                "        </div>  " +
+                                                "    </div>  " +
+                                                "    <div class='student_right'>  " +
+                                                "        <a href='StudentInfo_add.html'>| 编辑</a>  " +
+                                                "    </div>  " +
+                                                "  </div>  " +
+                                                "   </li>");
+                    }
+                    );
+                },
+                error: function () { },
+                complete: function (XMLHttpRequest, textStatus) {
+                }
+            });
+
+            //$('#save').click(function () {
+            //    alert($("#FBIRTHDAY").val());
+            //    return;
+            //    //将值带到输入框
+            //    $.ajax({
+            //        type: "post",
+            //        url: "StudentInfoServer.ashx",
+            //        data: {
+            //            method: "SetStudentInfo", page: "StudentInfo_add", FNAME: $("#FNAME").val(),
+            //            FBIRTHDAY: $("#FBIRTHDAY").val(), FCLASS: $("#FCLASS").val(),
+            //            FSEX: $("#FSEX").val(), FHEIGHT: $("#FHEIGHT").val(), FWEIGHT: $("#FWEIGHT").val()
+            //        },
+            //        dataType: "json",
+            //        success: function (curResult) {
+            //            alert(curResult.msg);
+            //            //window.location.href = "StudentInfo.html";
+            //        },
+            //        error: function () { },
+            //        complete: function (XMLHttpRequest, textStatus) {
+            //        }
+            //    });
+            //});
+        });
+    </script>
+</head>
+<body>
+    <!--顶部通栏-->
+    <header class="jd_topBar">
+        <div>
+            <h3 class="title">学生信息</h3>
+            <a href="#" class="a_save" id="save">添加信息</a>
+        </div>
+    </header>
+    <!--学生信息-->
+    <div class="student">
+        <ul class="ul_list">
+           <!-- <li>
+                <div class="student_MAIN">
+                    <div class="student_left">
+                        <p>王</p>
+                        <p id="FStudentId" hidden>1</p>
+                    </div>
+
+                    <div class="student_center">
+                        <div class="student_top">
+                            <div class="div_name">
+                                <p id="FNAME">王小明</p>
+                            </div>
+                            <div class="div_sex">
+                                <p id="FCLASS">四年级1班</p>
+                            </div>
+                        </div>
+                        <div class="student_foot">
+                            <p style="display: inline">出生日期：</p>
+                            <p id="FBIRTHDAY" style="display: inline">2007年10月10日 </p>
+                            <p style="display: inline">&nbsp;性别：</p>
+                            <p id="FSEX" style="display: inline">男</p>
+
+                        </div>
+                        <div class="student_foot">
+                            <p style="display: inline">身高：</p>
+                            <p id="FHEIGHT" style="display: inline">145</p>
+                            <p style="display: inline">cm</p>
+                            <p style="display: inline">体重：</p>
+                            <p id="FWEIGHT" style="display: inline">30</p>
+                            <p style="display: inline">kg</p>
+                        </div>
+                    </div>
+
+                    <div class="student_right">
+                        <a href="StudentInfo_add.html">| 编辑</a>
+                    </div>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+
+</body>
+</html>

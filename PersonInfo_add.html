@@ -1,94 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-<meta charset="UTF-8">
-<meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<title>添加家长信息</title>
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/student_add.css">
-<link rel="stylesheet" href="css/common.css">
-<script type="text/javascript" src="MobileScripts/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('#add').click(function () {
-            //将值带到输入框
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>添加家长信息</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/StudentInfo_add.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="MobileScripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
             $.ajax({
                 type: "post",
-                //url: "PersonInfoServer.ashx?method=GetPersonInfo",
                 url: "PersonInfoServer.ashx",
-                data: {
-                    method: "SetPersonInfo", page: "PersonInfo_add", FNAME: $("#FNAME").val(),
-                    FPHONENO: $("#FPHONENO").val(), FBANKNO: $("#FBANKNO").val(), FADDRESS: $("#FADDRESS").val(), FBANKNAME: $("#FBANKNAME").val()
-                },
+                data: { method: "GetPersonInfo", page: "PersonInfo" },
                 dataType: "json",
                 success: function (curResult) {
-                    alert(curResult.msg);
-                    //history.go(-1);  //返回上一页
-                    window.location.href = "PersonInfo.html";
+                    //当返回的json数组只有一条数据时
+                    // alert(curResult[0]["FNAME"]);  //1  有两种方式获取Json数据
+                    // alert(curResult[0].FNAME);     //2
+                    $("#FNAME").val(curResult[0].FNAME);
+                    $("#FPHONENO").val(curResult[0].FPHONENO);
+                    $("#FBANKNO").val(curResult[0].FBANKNO);
+                    $("#FADDRESS").val(curResult[0].FADDRESS);
+                    $("#FBANKNAME").val(curResult[0].FBANKNAME);
                 },
                 error: function () { },
                 complete: function (XMLHttpRequest, textStatus) {
                 }
             });
 
-        });       
-    });
-</script>
+            $('#save').click(function () {
+                if ($("#FPHONENO").val().length != 11)
+                {
+                    alert("请输入有效的手机号码！");
+                    return;
+                }
+                //将值带到输入框
+                $.ajax({
+                    type: "post",
+                    //url: "PersonInfoServer.ashx?method=GetPersonInfo",
+                    url: "PersonInfoServer.ashx",
+                    data: {
+                        method: "SetPersonInfo", page: "PersonInfo_add", FNAME: $("#FNAME").val(),
+                        FPHONENO: $("#FPHONENO").val(), FBANKNO: $("#FBANKNO").val(), FADDRESS: $("#FADDRESS").val(), FBANKNAME: $("#FBANKNAME").val()
+                    },
+                    dataType: "json",
+                    success: function (curResult) {
+                        alert(curResult.msg);
+                        //history.go(-1);  //返回上一页
+                        window.location.href = "PersonInfo.html";
+                    },
+                    error: function () { },
+                    complete: function (XMLHttpRequest, textStatus) {
+                    }
+                });
+
+            });
+        });
+    </script>
 </head>
 <body>
-<!--顶部通栏-->
-    <header class="jd_topBar" style="background-color: #F8EFF0">      
-        <h3 class="title">添加家长信息<a class="a_add" id="add">保存</a></h3>       
-    </header>
-
-<!--学生信息-->
-       <div class="mt10 ui-form">
-            <div class="ui-form-item ui-border-b">
-                <label>
-                    姓名
-                </label>
-                <input type="text" placeholder="家长姓名" id="FNAME">
-                </a>
-            </div>           			
-			 <div class="ui-form-item ui-border-b">
-                <label>
-                    手机号
-                </label>
-                <input type="tel" placeholder="手机号" id="FPHONENO">
-            </div>
-			
-			 <div class="ui-form-item ui-border-b">
-                <label>
-                    银行账号
-                </label>
-                <input type="tel" placeholder="银行账号" id="FBANKNO">
-            </div>
-			
-			<div class="ui-form-item ui-border-b">
-                <label>
-                    开户支行
-                </label>
-                <input type="tel" placeholder="开户支行（详细至地市支行）" id="FADDRESS">
-            </div>
-			
-            <div class="ui-form-item ui-border-b">
-                <label>
-                    户名
-                </label>
-                <input type="tel" placeholder="户名" id="FBANKNAME">
-            </div>
-            <p style="white-space: normal; line-height: 20px; font-size:8px; color:gray; margin-top:15px;">
-                注：此登记银行账号只为提高学校退款退费效率，家长能更便捷收学校退回学杂费及政府补贴等。为不产生纠纷，请家长填写学生直属家长账户信息。						
-             </p>
-
+    <!--顶部通栏-->
+    <header class="jd_topBar">
+        <div>
+            <h3 class="title">添加家长信息</h3>
+            <a href="#" class="a_save" id="save">保存</a>
         </div>
-       <!--  <div class="ui-btn-wrap mt20 ui-form">
+    </header>
+    <!--学生信息-->
+    <div class="mt10 ui-form">
+        <div class="ui-form-item ui-border-b">
+            <label>
+                姓名
+            </label>
+            <input type="text" placeholder="家长姓名" id="FNAME" required>
+            </a>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                手机号
+            </label>
+            <input type="tel" placeholder="手机号" id="FPHONENO" maxlength="11" required>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                银行账号
+            </label>
+            <input type="tel" placeholder="银行账号" id="FBANKNO" required>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                开户支行
+            </label>
+            <input type="text" placeholder="开户支行（详细至地市支行）" id="FADDRESS" required>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                户名
+            </label>
+            <input type="text" placeholder="户名" id="FBANKNAME" required>
+        </div>
+        <p style="white-space: normal; line-height: 20px; font-size: 10px; color: gray; margin-top: 15px;">
+            注：此登记银行账号只为提高学校退款退费效率，家长能更便捷收学校退回学杂费及政府补贴等。为不产生纠纷，请家长填写学生直属家长账户信息。						
+        </p>
+
+    </div>
+    <!--  <div class="ui-btn-wrap mt20 ui-form">
             <button class="ui-btn-lg ui-btn-success">
                 保存
             </button>
         </div> -->
- 
-<script src='js/jquery.js'></script>
-<script src="js/cartjs.js"></script>
+
+    <script src='js/jquery.js'></script>
+    <script src="js/cartjs.js"></script>
 </body>
 </html>

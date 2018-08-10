@@ -78,6 +78,36 @@ public static class DBHelper
         }
     }
 
+    /// <summary>
+    /// 执行SQL语句，返回影响的记录数
+    /// </summary>
+    /// <param name="SQLString">SQL语句</param>
+    /// <returns>影响的记录数</returns>
+    public static object ExecuteSqlScalar(string SQLString)
+    {
+        using (SqlConnection connection = new SqlConnection(ConnStr))
+        {
+            using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+            {
+                object firstObj;
+                try
+                {
+                    cmd.CommandTimeout = 0;
+                    connection.Open();
+                    firstObj = cmd.ExecuteScalar();
+                    connection.Close();
+                    return firstObj;
+                }
+                catch (SqlException E)
+                {
+                    connection.Close();
+                    throw new Exception(E.Message);
+
+                }
+
+            }
+        }
+    }
 
     /// <summary>
     /// 执行多条SQL语句，实现数据库事务。
